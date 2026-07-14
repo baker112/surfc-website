@@ -6,14 +6,17 @@
 <title>Events | Sheffield University Rugby Football Club</title>
 <meta name="description" content="Upcoming SURFC events — trials, socials and pre-season.">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@600;800&family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" href="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg">
 </head>
 <body>
 
-<header>
-  <img class="crest" src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="Sheffield University Rugby Football Club crest">
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="Sheffield University Rugby Football Club crest">
+    <span>SURFC</span>
+  </a>
   <nav>
     <a href="index.html">Home</a>
     <a href="teams.html">Teams</a>
@@ -21,61 +24,75 @@
     <a href="gallery.html">Match Gallery</a>
     <a href="sponsors.html">Sponsors</a>
   </nav>
+  <a class="btn btn-small" href="https://su.sheffield.ac.uk/shop">Join the Club</a>
 </header>
 
-<main>
-  <section>
+<section class="banner">
+  <img class="hero-bg" src="assets/img/b12939_db42c08d14c34bcfa55e20d1935e620b.jpeg" alt="" aria-hidden="true">
+  <div>
+    <p class="kicker">Off the pitch</p>
     <h1>Upcoming Events</h1>
-    <p class="eyebrow">Stay up to date with whats occurring in the SURFC aside from BUCS fixtures</p>
+  </div>
+</section>
 
-    <div class="event">
-      <img src="assets/img/b12939_db42c08d14c34bcfa55e20d1935e620b.jpeg" alt="Fresher's trial">
-      <div>
-        <div class="when">Date and time is TBD</div>
-        <strong>Fresher's trial</strong>
-        <div class="where">Wave pitches &mdash; 2 Whitham Rd, Sheffield S10 2AH</div>
-      </div>
-      <a class="btn" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+<main>
+  <section class="reveal">
+    <div class="section-head">
+      <p class="lede">Stay up to date with whats occurring in the SURFC aside from BUCS fixtures</p>
     </div>
-
-    <div class="event">
-      <img src="assets/img/1b1a09de53e24055a172b2afe8f416d6.png" alt="Jars and Joue">
-      <div>
-        <div class="when">Date and time is TBD</div>
-        <strong>Jars and Joue</strong>
-        <div class="where">The Edge &mdash; 34 Endcliffe Cres, Sheffield S10 3ED</div>
-      </div>
-      <a class="btn" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
-    </div>
-
-    <div class="event">
-      <img src="assets/img/b12939_3f2725c372a5485da8fcbeeadc928176.jpeg" alt="2026/27 Pre-season">
-      <div>
-        <div class="when">Date and time is TBD</div>
-        <strong>2026/27 Pre-season</strong>
-        <div class="where">Location is TBD</div>
-      </div>
-      <a class="btn" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+    <div class="events">
+      <article class="event-card">
+        <div class="thumb"><img src="assets/img/b12939_db42c08d14c34bcfa55e20d1935e620b.jpeg" alt="Fresher's trial"></div>
+        <div class="body">
+          <span class="when">Date and time is TBD</span>
+          <h3>Fresher's trial</h3>
+          <p class="where">Wave pitches &mdash; 2 Whitham Rd, Sheffield S10 2AH</p>
+          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="thumb"><img src="assets/img/1b1a09de53e24055a172b2afe8f416d6.png" alt="Jars and Joue"></div>
+        <div class="body">
+          <span class="when">Date and time is TBD</span>
+          <h3>Jars and Joue</h3>
+          <p class="where">The Edge &mdash; 34 Endcliffe Cres, Sheffield S10 3ED</p>
+          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+        </div>
+      </article>
+      <article class="event-card">
+        <div class="thumb"><img src="assets/img/b12939_3f2725c372a5485da8fcbeeadc928176.jpeg" alt="2026/27 Pre-season"></div>
+        <div class="body">
+          <span class="when">Date and time is TBD</span>
+          <h3>2026/27 Pre-season</h3>
+          <p class="where">Location is TBD</p>
+          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+        </div>
+      </article>
     </div>
   </section>
 </main>
 
-<footer>
-  <div>
-    <h3>SURFC</h3>
-    <p>Sheffield University Rugby Football Club<br>Western Bank, Sheffield S10 2TN</p>
-  </div>
-  <div>
-    <h3>Contact</h3>
-    <p><a href="mailto:email@sheffield.felixmakeitnow">email@sheffield.felixmakeitnow</a></p>
-  </div>
-  <div>
-    <h3>Follow Us</h3>
-    <ul>
-      <li><a href="https://www.facebook.com/SURFCofficial/">Facebook</a></li>
-      <li><a href="https://www.instagram.com/sheffieldurfc/">Instagram</a></li>
-      <li><a href="https://www.tiktok.com/@sheffieldurfc">TikTok</a></li>
-    </ul>
+<div class="hoops" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img class="footer-crest" src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="">
+      <h3>SURFC</h3>
+      <p>Sheffield University Rugby Football Club<br>Western Bank, Sheffield S10 2TN</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="mailto:email@sheffield.felixmakeitnow">email@sheffield.felixmakeitnow</a></p>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="https://www.facebook.com/SURFCofficial/">Facebook</a></li>
+        <li><a href="https://www.instagram.com/sheffieldurfc/">Instagram</a></li>
+        <li><a href="https://www.tiktok.com/@sheffieldurfc">TikTok</a></li>
+      </ul>
+    </div>
   </div>
   <p class="copyright">&copy; 2026 Sheffield University Rugby Football Club. All rights reserved.</p>
 </footer>
