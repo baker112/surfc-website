@@ -517,12 +517,28 @@ section { margin: 6.5rem 0; }
    -------------------------------------------------------------------------- */
 @media (max-width: 900px) {
   .fixtures { grid-template-columns: 1fr; }
-  .site-header { gap: 1.2rem; }
-  .site-header nav { gap: 1.1rem; }
-  .site-header .btn { display: none; }
+}
+/* Mobile header: crest + CTA on top, nav as a swipeable strip below */
+@media (max-width: 760px) {
+  .site-header { flex-wrap: wrap; gap: 0.5rem 1rem; padding: 0.6rem 4vw; }
+  .brand img { width: 42px; }
+  .brand span { font-size: 1.25rem; }
+  .site-header .btn { margin-left: auto; }
+  .site-header nav {
+    order: 3;
+    flex-basis: 100%;
+    margin-left: 0;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 1.4rem;
+    scrollbar-width: none;
+  }
+  .site-header nav::-webkit-scrollbar { display: none; }
+  .site-header nav a { white-space: nowrap; font-size: 0.85rem; }
 }
 @media (max-width: 600px) {
-  .hero { min-height: 78vh; padding-bottom: 3.5rem; }
-  .brand span { display: none; }
+  .hero { min-height: 72vh; padding-bottom: 3rem; }
+  .hero p { font-size: 1rem; }
+  .banner { min-height: 34vh; padding-top: 4rem; }
   section { margin: 4.5rem 0; }
 }
