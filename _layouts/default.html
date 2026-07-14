@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{ page.title }} | Sheffield University Rugby Football Club</title>
+<meta name="description" content="{{ page.description }}">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<link rel="icon" href="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg">
+</head>
+<body>
+
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="Sheffield University Rugby Football Club crest">
+    <span>SURFC</span>
+  </a>
+  <nav>
+    <a href="index.html"{% if page.url == "/" or page.url == "/index.html" %} aria-current="page"{% endif %}>Home</a>
+    <a href="teams.html"{% if page.url == "/teams.html" %} aria-current="page"{% endif %}>Teams</a>
+    <a href="events.html"{% if page.url == "/events.html" %} aria-current="page"{% endif %}>Events</a>
+    <a href="gallery.html"{% if page.url == "/gallery.html" %} aria-current="page"{% endif %}>Match Gallery</a>
+    <a href="sponsors.html"{% if page.url == "/sponsors.html" %} aria-current="page"{% endif %}>Sponsors</a>
+  </nav>
+  <a class="btn btn-small" href="{{ site.data.site.join_url }}">Join the Club</a>
+</header>
+
+{{ content }}
+
+<div class="hoops" aria-hidden="true"></div>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <img class="footer-crest" src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="">
+      <h3>SURFC</h3>
+      <p>{{ site.data.site.club_name }}<br>{{ site.data.site.address }}</p>
+    </div>
+    <div>
+      <h3>Contact</h3>
+      <p><a href="mailto:{{ site.data.site.email }}">{{ site.data.site.email }}</a></p>
+    </div>
+    <div>
+      <h3>Follow Us</h3>
+      <ul>
+        <li><a href="{{ site.data.site.facebook }}">Facebook</a></li>
+        <li><a href="{{ site.data.site.instagram }}">Instagram</a></li>
+        <li><a href="{{ site.data.site.tiktok }}">TikTok</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="copyright">&copy; 2026 {{ site.data.site.club_name }}. All rights reserved.</p>
+</footer>
+
+</body>
+</html>

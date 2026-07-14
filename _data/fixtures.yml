@@ -1,0 +1,27 @@
+last5:
+  - opponent: vs Liverpool University 1s
+    result: L
+    score: 0-0
+  - opponent: vs Leeds Beckett 2's
+    result: L
+    score: 61–10
+  - opponent: vs Durham University 3's
+    result: W
+    score: 31-29
+  - opponent: vs Newcastle University 3's
+    result: W
+    score: 31–14
+  - opponent: vs Leeds Beckett 2's
+    result: L
+    score: 36-33
+next5:
+  - opponent: TBA
+    score: 0-0
+  - opponent: TBA
+    score: 0-0
+  - opponent: TBA
+    score: 0-0
+  - opponent: TBA
+    score: 0-0
+  - opponent: TBA
+    score: 0-0

@@ -1,0 +1,17 @@
+items:
+  - name: Ants Posa — Head Coach
+    image: assets/img/b12939_ec74096ba7b74eb28a34e54d4e562977.jpeg
+    bio: Ants Posa, former coach of the Croatian national squad, he brings advanced coaching to each of our BUCS competing teams, leading the 1st XV with a focus on precision and competitive spirit.
+    contain: false
+  - name: First XV Captain — Matthew Dryden
+    image: assets/img/b12939_2972aff9a4b043268419460d369f0141.jpeg
+    bio: Insert bibliography of the drizzler
+    contain: false
+  - name: Second XV Captain — Ali Smart
+    image: assets/img/b12939_347d21b9614b4300b5ab31e66fdd86a7.jpeg
+    bio: Insert bibliography goes here
+    contain: false
+  - name: Third XV Captain — N/A
+    image: assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg
+    bio: Insert bibliography goes here
+    contain: true

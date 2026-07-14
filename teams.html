@@ -1,32 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Teams | Sheffield University Rugby Football Club</title>
-<meta name="description" content="SURFC squads: 1st XV, 2nd XV, 3rd XV and Development, plus our coaching staff and leadership.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg">
-</head>
-<body>
-
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="Sheffield University Rugby Football Club crest">
-    <span>SURFC</span>
-  </a>
-  <nav>
-    <a href="index.html">Home</a>
-    <a href="teams.html" aria-current="page">Teams</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Match Gallery</a>
-    <a href="sponsors.html">Sponsors</a>
-  </nav>
-  <a class="btn btn-small" href="https://su.sheffield.ac.uk/shop">Join the Club</a>
-</header>
-
+---
+layout: default
+title: Teams
+description: "SURFC squads: 1st XV, 2nd XV, 3rd XV and Development, plus our coaching staff and leadership."
+---
 <section class="banner">
   <img class="hero-bg" src="assets/img/b12939_4a34c17b6f644a70b7a55cbc415a1914.jpeg" alt="" aria-hidden="true">
   <div>
@@ -41,34 +17,15 @@
       <p class="lede">Through top quality coaching, an inclusive development system and a cohort of hardworking players, we maintain a high standard of University Rugby from our developmental pathways to Northern Premier 1 BUCS competition.</p>
     </div>
     <div class="cards">
+      {% for t in site.data.teams.items %}
       <article class="card">
-        <div class="thumb"><img src="assets/img/b12939_4a34c17b6f644a70b7a55cbc415a1914.jpeg" alt="1st XV team huddle"></div>
+        <div class="thumb"><img src="{{ t.image }}" alt="{{ t.name }}"></div>
         <div class="body">
-          <h3>1st XV</h3>
-          <p>Our most competitive side, competing in the BUCS Men's Northern Premier division. We are a high performing side striving for promotion.</p>
+          <h3>{{ t.name }}</h3>
+          <p>{{ t.description }}</p>
         </div>
       </article>
-      <article class="card">
-        <div class="thumb"><img src="assets/img/b12939_1f19f58de61145dfb64a2339650e134a.jpeg" alt="2nd XV team photo with medals"></div>
-        <div class="body">
-          <h3>2nd XV</h3>
-          <p>Les Deux, the intermediate squad focused on technical development and refinement for the next generation of UOS Rugby Union 1st XV players.</p>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="assets/img/b12939_abe9f42711eb4fd69e88183273526d04.jpeg" alt="3rd XV players at training"></div>
-        <div class="body">
-          <h3>3rd XV</h3>
-          <p>DAS 3s, all about developing skills with the aim of steady improvement to gain promotion.</p>
-        </div>
-      </article>
-      <article class="card">
-        <div class="thumb"><img src="assets/img/b12939_85d0f31d7a1145729d8f6f11d1638cd4.jpeg" alt="Development squad huddle at training"></div>
-        <div class="body">
-          <h3>Development</h3>
-          <p>Our foundation for future stars, providing an environment for less experienced players to fall in love with the game and grow.</p>
-        </div>
-      </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -79,62 +36,15 @@
       <p class="lede">Our dedicated coaching team and captains, committed to fostering rugby excellence at the University of Sheffield.</p>
     </div>
     <div class="cards">
+      {% for s in site.data.staff.items %}
       <article class="card portrait staff">
-        <div class="thumb"><img src="assets/img/b12939_ec74096ba7b74eb28a34e54d4e562977.jpeg" alt="Ants Posa, Head Coach"></div>
+        <div class="thumb"><img src="{{ s.image }}" alt="{{ s.name }}"{% if s.contain %} style="object-fit:contain;background:#0f0f10"{% endif %}></div>
         <div class="body">
-          <h3>Ants Posa &mdash; Head Coach</h3>
-          <p>Ants Posa, former coach of the Croatian national squad, he brings advanced coaching to each of our BUCS competing teams, leading the 1st XV with a focus on precision and competitive spirit.</p>
+          <h3>{{ s.name }}</h3>
+          <p>{{ s.bio }}</p>
         </div>
       </article>
-      <article class="card portrait staff">
-        <div class="thumb"><img src="assets/img/b12939_2972aff9a4b043268419460d369f0141.jpeg" alt="Matthew Dryden, First XV captain"></div>
-        <div class="body">
-          <h3>First XV Captain &mdash; Matthew Dryden</h3>
-          <p>Insert bibliography of the drizzler</p>
-        </div>
-      </article>
-      <article class="card portrait staff">
-        <div class="thumb"><img src="assets/img/b12939_347d21b9614b4300b5ab31e66fdd86a7.jpeg" alt="Ali Smart, Second XV captain"></div>
-        <div class="body">
-          <h3>Second XV Captain &mdash; Ali Smart</h3>
-          <p>Insert bibliography goes here</p>
-        </div>
-      </article>
-      <article class="card portrait staff">
-        <div class="thumb"><img src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="SURFC crest" style="object-fit:contain;background:#0f0f10"></div>
-        <div class="body">
-          <h3>Third XV Captain &mdash; N/A</h3>
-          <p>Insert bibliography goes here</p>
-        </div>
-      </article>
+      {% endfor %}
     </div>
   </section>
 </main>
-
-<div class="hoops" aria-hidden="true"></div>
-
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <img class="footer-crest" src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="">
-      <h3>SURFC</h3>
-      <p>Sheffield University Rugby Football Club<br>Western Bank, Sheffield S10 2TN</p>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p><a href="mailto:email@sheffield.felixmakeitnow">email@sheffield.felixmakeitnow</a></p>
-    </div>
-    <div>
-      <h3>Follow Us</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/SURFCofficial/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/sheffieldurfc/">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@sheffieldurfc">TikTok</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="copyright">&copy; 2026 Sheffield University Rugby Football Club. All rights reserved.</p>
-</footer>
-
-</body>
-</html>

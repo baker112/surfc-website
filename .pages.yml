@@ -1,0 +1,190 @@
+# Pages CMS configuration — https://pagescms.org
+# This gives the club a no-code editing dashboard over the site content.
+media:
+  input: assets/img
+  output: assets/img
+
+content:
+  - name: fixtures
+    label: Fixtures & Results
+    type: file
+    path: _data/fixtures.yml
+    fields:
+      - name: last5
+        label: Last 5 results (most recent first)
+        type: object
+        list: true
+        fields:
+          - name: opponent
+            label: Opponent (e.g. "vs Leeds Beckett 2's")
+            type: string
+          - name: result
+            label: Result
+            type: select
+            options: [W, L, D]
+          - name: score
+            label: Score (e.g. "31-29")
+            type: string
+      - name: next5
+        label: Next 5 fixtures
+        type: object
+        list: true
+        fields:
+          - name: opponent
+            label: Opponent ("TBA" if not known yet)
+            type: string
+          - name: score
+            label: Score placeholder (leave as "0-0")
+            type: string
+
+  - name: events
+    label: Upcoming Events
+    type: file
+    path: _data/events.yml
+    fields:
+      - name: items
+        label: Events
+        type: object
+        list: true
+        fields:
+          - name: title
+            label: Event name
+            type: string
+          - name: when
+            label: Date and time (free text)
+            type: string
+          - name: where
+            label: Venue
+            type: string
+          - name: address
+            label: Address (optional)
+            type: string
+          - name: image
+            label: Photo
+            type: image
+          - name: rsvp
+            label: RSVP link
+            type: string
+
+  - name: teams
+    label: Teams
+    type: file
+    path: _data/teams.yml
+    fields:
+      - name: items
+        label: Teams
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Team name
+            type: string
+          - name: image
+            label: Team photo
+            type: image
+          - name: description
+            label: Description
+            type: text
+
+  - name: staff
+    label: Coaches & Captains
+    type: file
+    path: _data/staff.yml
+    fields:
+      - name: items
+        label: People
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name and role (e.g. "First XV Captain — Jo Bloggs")
+            type: string
+          - name: image
+            label: Photo
+            type: image
+          - name: bio
+            label: Bio
+            type: text
+          - name: contain
+            label: Logo/crest image (tick so it isn't cropped)
+            type: boolean
+
+  - name: sponsors
+    label: Sponsors & Partners
+    type: file
+    path: _data/sponsors.yml
+    fields:
+      - name: official
+        label: Official sponsors
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Name
+            type: string
+          - name: url
+            label: Website
+            type: string
+          - name: image
+            label: Logo
+            type: image
+      - name: tiers
+        label: Sponsorship tiers
+        type: object
+        list: true
+        fields:
+          - name: name
+            label: Tier name
+            type: string
+          - name: style
+            label: Colour style
+            type: select
+            options: [bronze, silver, gold]
+          - name: benefits
+            label: Benefits (one per line)
+            type: string
+            list: true
+      - name: partners
+        label: Valued partners (names)
+        type: string
+        list: true
+
+  - name: gallery
+    label: Match Gallery
+    type: file
+    path: _data/gallery.yml
+    fields:
+      - name: photos
+        label: Photos
+        type: image
+        list: true
+
+  - name: site
+    label: Site Settings (contact, links)
+    type: file
+    path: _data/site.yml
+    fields:
+      - name: club_name
+        label: Club name
+        type: string
+      - name: address
+        label: Address
+        type: string
+      - name: email
+        label: Contact email
+        type: string
+      - name: join_url
+        label: "Join the Club" button link
+        type: string
+      - name: bucs_url
+        label: BUCS league table link
+        type: string
+      - name: facebook
+        label: Facebook URL
+        type: string
+      - name: instagram
+        label: Instagram URL
+        type: string
+      - name: tiktok
+        label: TikTok URL
+        type: string

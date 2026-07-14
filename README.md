@@ -1,43 +1,49 @@
 # Sheffield University RFC — Website
 
-Static rebuild of the SURFC site rescued from Wix (`sharazeuan.wixsite.com/sheffield-university`).
-Plain HTML + one CSS file, no build step, no JavaScript. Host it anywhere for free.
+The club website, live at **https://surfc.co.uk** (rescued from Wix, hosted free on GitHub Pages).
 
-## Pages
+## Updating the site — no code needed
 
-| File | Page |
+Content lives in simple data files that the pages fill in automatically. Edit it at
+**[pagescms.org](https://pagescms.org)**: sign in with GitHub, open this repo, and you get
+friendly forms for:
+
+- **Fixtures & Results** — update the Last 5 / Next 5 lists after each match
+- **Upcoming Events** — add/remove events, upload a photo
+- **Teams** and **Coaches & Captains** — photos, names, bios
+- **Sponsors & Partners** — logos, links, tier benefits
+- **Match Gallery** — upload match photos
+- **Site Settings** — contact email, address, social links
+
+Hit **Save** and the live site updates itself in about a minute.
+
+### Giving a committee member access
+
+1. They create a free account at github.com
+2. Repo → **Settings → Collaborators → Add people** → their username
+3. They accept the email invite, then sign in at pagescms.org and pick this repo
+
+## For developers
+
+Plain Jekyll (built natively by GitHub Pages — no Actions, no gems to install):
+
+| Path | What |
 |---|---|
-| `index.html` | Home — hero, 1st XV fixtures & results, upcoming events, media strip |
-| `teams.html` | Squad overview + coaching staff & captains |
-| `events.html` | Upcoming events |
-| `gallery.html` | Match day gallery (30 photos) |
-| `sponsors.html` | Sponsors, sponsorship tiers, partners |
-| `style.css` | All styling |
-| `assets/img/` | All 50 images, saved at original resolution from Wix's CDN |
+| `_data/*.yml` | All editable content (this is what Pages CMS edits) |
+| `_layouts/default.html` | Shared header/footer shell |
+| `index/teams/events/gallery/sponsors.html` | Page templates (Liquid) |
+| `style.css` | All styling — zero JavaScript on the whole site |
+| `assets/img/` | Images (originals pulled from Wix's CDN) |
+| `.pages.yml` | Pages CMS form definitions |
+| `CNAME` | Custom domain (surfc.co.uk) |
 
-## How to update content
+Deploys automatically on every push to `master`.
 
-Everything is plain HTML — open the file, edit the text, save.
+## Known placeholders carried over from the old Wix site
 
-- **Fixtures/results**: edit the two lists in `index.html` (search for "Last 5").
-- **Events**: same block appears in `index.html` and `events.html`.
-- **New photos**: drop the file in `assets/img/` and add an `<img>` tag in `gallery.html`.
-
-## Deploying (all free)
-
-**GitHub Pages** (recommended)
-1. Create a repo on GitHub and push this folder.
-2. Repo → Settings → Pages → Source: `main` branch, `/ (root)`.
-3. Site appears at `https://<user>.github.io/<repo>/`.
-
-**Netlify / Cloudflare Pages**: drag-and-drop this folder in their dashboard, done.
-
-**Custom domain**: all of the above support one for free — you only pay for the domain itself (~£10/yr).
-
-## Leftover placeholders from the Wix site (carried over as-is)
-
-- Contact email is `email@sheffield.felixmakeitnow` — not a real address, appears in every footer and the sponsor "Enquire Now" buttons.
-- Captain bios on `teams.html` still say "Insert bibliography...".
-- Sponsorship tier benefits say "Beast tell us the credentials".
-- Valued partners are "Partner 1–8" with no names.
-- Wix's RSVP buttons couldn't migrate (they needed Wix's booking backend) — they now link to the club Instagram. Point them at a Google Form or SU page when you have one.
+- Contact email `email@sheffield.felixmakeitnow` is not a real address
+- Captain bios say "Insert bibliography…" — edit under **Coaches & Captains**
+- Tier benefits say "Beast tell us the credentials" — edit under **Sponsors & Partners**
+- Valued partners are "Partner 1–8"
+- RSVP buttons link to Instagram (Wix's RSVP needed their backend) — point them at a
+  Google Form via **Upcoming Events** when ready

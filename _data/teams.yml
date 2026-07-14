@@ -1,0 +1,13 @@
+items:
+  - name: 1st XV
+    image: assets/img/b12939_4a34c17b6f644a70b7a55cbc415a1914.jpeg
+    description: Our most competitive side, competing in the BUCS Men's Northern Premier division. We are a high performing side striving for promotion.
+  - name: 2nd XV
+    image: assets/img/b12939_1f19f58de61145dfb64a2339650e134a.jpeg
+    description: Les Deux, the intermediate squad focused on technical development and refinement for the next generation of UOS Rugby Union 1st XV players.
+  - name: 3rd XV
+    image: assets/img/b12939_abe9f42711eb4fd69e88183273526d04.jpeg
+    description: DAS 3s, all about developing skills with the aim of steady improvement to gain promotion.
+  - name: Development
+    image: assets/img/b12939_85d0f31d7a1145729d8f6f11d1638cd4.jpeg
+    description: Our foundation for future stars, providing an environment for less experienced players to fall in love with the game and grow.

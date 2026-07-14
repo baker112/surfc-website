@@ -1,39 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Home | Sheffield University Rugby Football Club</title>
-<meta name="description" content="The SURFC is the premier rugby club at The University of Sheffield, with 1st, 2nd, 3rd and Development XVs competing in BUCS.">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" href="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg">
-</head>
-<body>
-
-<header class="site-header">
-  <a class="brand" href="index.html">
-    <img src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="Sheffield University Rugby Football Club crest">
-    <span>SURFC</span>
-  </a>
-  <nav>
-    <a href="index.html" aria-current="page">Home</a>
-    <a href="teams.html">Teams</a>
-    <a href="events.html">Events</a>
-    <a href="gallery.html">Match Gallery</a>
-    <a href="sponsors.html">Sponsors</a>
-  </nav>
-  <a class="btn btn-small" href="https://su.sheffield.ac.uk/shop">Join the Club</a>
-</header>
-
+---
+layout: default
+title: Home
+description: The SURFC is the premier rugby club at The University of Sheffield, with 1st, 2nd, 3rd and Development XVs competing in BUCS.
+---
 <section class="hero">
   <img class="hero-bg" src="assets/img/b12939_8fbb8680d1804dbfa3c354d3e34e1105.jpg" alt="" aria-hidden="true">
   <div>
     <h1>University of Sheffield <span class="outline">Rugby Football Club</span></h1>
     <p>The SURFC is the premier rugby club at The University of Sheffield, fostering sporting excellence and community through our 1st, 2nd, 3rd and Development XVs in BUCs competitions and a wealth of social aspects.</p>
     <div class="cta-row">
-      <a class="btn" href="https://su.sheffield.ac.uk/shop">Join the Club</a>
+      <a class="btn" href="{{ site.data.site.join_url }}">Join the Club</a>
       <a class="btn btn-ghost" href="gallery.html">View All Media</a>
     </div>
   </div>
@@ -55,26 +31,22 @@
       <div class="board">
         <h3>Last 5</h3>
         <ul>
-          <li><span class="badge l">L</span><span class="opp">vs Liverpool University 1s</span><span class="score">0-0</span></li>
-          <li><span class="badge l">L</span><span class="opp">vs Leeds Beckett 2's</span><span class="score">61&ndash;10</span></li>
-          <li><span class="badge w">W</span><span class="opp">vs Durham University 3's</span><span class="score">31-29</span></li>
-          <li><span class="badge w">W</span><span class="opp">vs Newcastle University 3's</span><span class="score">31&ndash;14</span></li>
-          <li><span class="badge l">L</span><span class="opp">vs Leeds Beckett 2's</span><span class="score">36-33</span></li>
+          {% for f in site.data.fixtures.last5 %}
+          <li><span class="badge {{ f.result | downcase }}">{{ f.result }}</span><span class="opp">{{ f.opponent }}</span><span class="score">{{ f.score }}</span></li>
+          {% endfor %}
         </ul>
       </div>
       <div class="board">
         <h3>Next 5</h3>
         <ul>
-          <li><span class="badge tba">&ndash;</span><span class="opp">TBA</span><span class="score">0-0</span></li>
-          <li><span class="badge tba">&ndash;</span><span class="opp">TBA</span><span class="score">0-0</span></li>
-          <li><span class="badge tba">&ndash;</span><span class="opp">TBA</span><span class="score">0-0</span></li>
-          <li><span class="badge tba">&ndash;</span><span class="opp">TBA</span><span class="score">0-0</span></li>
-          <li><span class="badge tba">&ndash;</span><span class="opp">TBA</span><span class="score">0-0</span></li>
+          {% for f in site.data.fixtures.next5 %}
+          <li><span class="badge tba">&ndash;</span><span class="opp">{{ f.opponent }}</span><span class="score">{{ f.score }}</span></li>
+          {% endfor %}
         </ul>
       </div>
     </div>
     <div class="bucs">
-      <a class="btn" href="https://bucs.playwaze.com/bucs-rugby-union-25-26/xva3fcfo6cdxb/league-display/Leagues/ni9tntcgkhh9q2">View BUCS Table</a>
+      <a class="btn" href="{{ site.data.site.bucs_url }}">View BUCS Table</a>
       <img src="assets/img/b12939_a8b4b6502dc84b90a9139c9a72861aad.jpeg" alt="British Universities and Colleges Sport (BUCS) logo">
     </div>
   </section>
@@ -86,33 +58,17 @@
       <p class="lede">Stay up to date with whats occurring in the SURFC aside from BUCS fixtures</p>
     </div>
     <div class="events">
+      {% for e in site.data.events.items %}
       <article class="event-card">
-        <div class="thumb"><img src="assets/img/b12939_db42c08d14c34bcfa55e20d1935e620b.jpeg" alt="Fresher's trial"></div>
+        <div class="thumb"><img src="{{ e.image }}" alt="{{ e.title }}"></div>
         <div class="body">
-          <span class="when">Date and time is TBD</span>
-          <h3>Fresher's trial</h3>
-          <p class="where">Wave pitches</p>
-          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
+          <span class="when">{{ e.when }}</span>
+          <h3>{{ e.title }}</h3>
+          <p class="where">{{ e.where }}</p>
+          <a class="btn btn-small" href="{{ e.rsvp }}">RSVP</a>
         </div>
       </article>
-      <article class="event-card">
-        <div class="thumb"><img src="assets/img/1b1a09de53e24055a172b2afe8f416d6.png" alt="Jars and Joue"></div>
-        <div class="body">
-          <span class="when">Date and time is TBD</span>
-          <h3>Jars and Joue</h3>
-          <p class="where">The Edge</p>
-          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
-        </div>
-      </article>
-      <article class="event-card">
-        <div class="thumb"><img src="assets/img/b12939_3f2725c372a5485da8fcbeeadc928176.jpeg" alt="2026/27 Pre-season"></div>
-        <div class="body">
-          <span class="when">Date and time is TBD</span>
-          <h3>2026/27 Pre-season</h3>
-          <p class="where">Location is TBD</p>
-          <a class="btn btn-small" href="https://www.instagram.com/sheffieldurfc/">RSVP</a>
-        </div>
-      </article>
+      {% endfor %}
     </div>
   </section>
 
@@ -134,31 +90,3 @@
     <img src="assets/img/b12939_20683dcf9b684db9a82c2f30c11a3604.png" alt="Sheffield Uni Rugby">
   </section>
 </main>
-
-<div class="hoops" aria-hidden="true"></div>
-
-<footer class="site-footer">
-  <div class="footer-grid">
-    <div>
-      <img class="footer-crest" src="assets/img/b12939_74cfb31a306d43d2a3a7a078422e0bc5.jpeg" alt="">
-      <h3>SURFC</h3>
-      <p>Sheffield University Rugby Football Club<br>Western Bank, Sheffield S10 2TN</p>
-    </div>
-    <div>
-      <h3>Contact</h3>
-      <p><a href="mailto:email@sheffield.felixmakeitnow">email@sheffield.felixmakeitnow</a></p>
-    </div>
-    <div>
-      <h3>Follow Us</h3>
-      <ul>
-        <li><a href="https://www.facebook.com/SURFCofficial/">Facebook</a></li>
-        <li><a href="https://www.instagram.com/sheffieldurfc/">Instagram</a></li>
-        <li><a href="https://www.tiktok.com/@sheffieldurfc">TikTok</a></li>
-      </ul>
-    </div>
-  </div>
-  <p class="copyright">&copy; 2026 Sheffield University Rugby Football Club. All rights reserved.</p>
-</footer>
-
-</body>
-</html>

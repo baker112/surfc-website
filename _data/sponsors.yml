@@ -1,0 +1,50 @@
+official:
+  - name: The Four Leaf
+    url: https://thefourleaf.co.uk
+    image: assets/img/b12939_3e425046b82f4cd3bf4f924f1ead7442.jpeg
+  - name: Firepit Rocks
+    url: https://firepit.rocks
+    image: assets/img/b12939_f3b54b9cc613425496050a908b652274.jpeg
+  - name: Molly Malones
+    url: https://www.molly-malones.co.uk/sheffield
+    image: assets/img/b12939_0190da7405ee4f628efd18fa1d434d04.jpeg
+  - name: Tiger Works
+    url: https://www.tigerworksbar.com
+    image: assets/img/b12939_ed4c1eaebd074ead9fe2155cee940af8.jpeg
+tiers:
+  - name: Bronze
+    style: bronze
+    benefits:
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+  - name: Gold
+    style: gold
+    benefits:
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+  - name: Silver
+    style: silver
+    benefits:
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+      - Beast tell us the credentials
+partners:
+  - Partner 1
+  - Partner 2
+  - Partner 3
+  - Partner 4
+  - Partner 5
+  - Partner 6
+  - Partner 7
+  - Partner 8
